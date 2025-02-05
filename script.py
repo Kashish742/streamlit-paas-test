@@ -1,12 +1,4 @@
-import subprocess
-import sys
-
-# Try installing OpenCV if it's not installed
-try:
-    import cv2
-except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "opencv-python"])
-    import cv2
+import cv2
 
 import numpy as np
 import os
