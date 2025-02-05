@@ -1,9 +1,20 @@
 import os
-os.system('pip install opencv-python')
-import cv2
+import subprocess
+import sys
 
+# Function to install a package
+def install_package(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Check if 'cv2' (opencv-python) is installed
+try:
+    import cv2
+except ImportError:
+    print("OpenCV not found. Installing opencv-python...")
+    install_package("opencv-python")
+
+# Import other required packages
 import numpy as np
-
 import matplotlib.pyplot as plt
 import streamlit as st
 
